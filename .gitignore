@@ -1,0 +1,45 @@
+# OS X Finder
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Xcode per-user config
+*.mode1
+*.mode1v3
+*.mode2v3
+*.perspective
+*.perspectivev3
+*.pbxuser
+xcuserdata
+
+# Build products
+build/
+*.o
+*.LinkFileList
+*.hmap
+*.ipa
+*.zip
+
+## Other
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
+
+# Automatic backup files
+*~.nib/
+*.swp
+*~
+*.dat
+*.dep
+UserInterfaceState.xcuserstate
+
+# Swift Package Manager
+Packages/
+Package.pins
+Package.resolved
+*.xcodeproj
+
+# Xcode automatically generates this directory with a .xcworkspacedata file and xcuserdata
+# hence it is not needed unless you have added a package configuration file to your project
+.swiftpm
