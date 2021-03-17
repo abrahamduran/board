@@ -16,9 +16,14 @@
 		17A48AC72601A39100AB34CA /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A48AC62601A39100AB34CA /* Post.swift */; };
 		17A48ACF2601A3B500AB34CA /* BlogEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A48ACE2601A3B400AB34CA /* BlogEntry.swift */; };
 		17A48AE12601A72C00AB34CA /* BlogEntriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A48AE02601A72C00AB34CA /* BlogEntriesRepository.swift */; };
+		17A48AF02601B15100AB34CA /* RemoteBlogEntryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A48AEF2601B15100AB34CA /* RemoteBlogEntryBuilder.swift */; };
 		17A48AF92601C4A300AB34CA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A48AF82601C4A300AB34CA /* User.swift */; };
+		17BF59D12601DAD100578BB0 /* DispatchQueue+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BF59D02601DAD100578BB0 /* DispatchQueue+Extension.swift */; };
+		17BF59E42601E31600578BB0 /* RemoteDataLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BF59E32601E31600578BB0 /* RemoteDataLogger.swift */; };
 		17D5960E2601CEF800278F43 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 17D5960D2601CEF800278F43 /* Alamofire */; };
 		17D596142601CF6F00278F43 /* AlamofireNetworkActivityIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 17D596132601CF6F00278F43 /* AlamofireNetworkActivityIndicator */; };
+		17D596192601D1DB00278F43 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D596182601D1DB00278F43 /* RemoteDataSource.swift */; };
+		17D596242601D59C00278F43 /* BlogEntriesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D596232601D59C00278F43 /* BlogEntriesRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +59,12 @@
 		17A48AC62601A39100AB34CA /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		17A48ACE2601A3B400AB34CA /* BlogEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogEntry.swift; sourceTree = "<group>"; };
 		17A48AE02601A72C00AB34CA /* BlogEntriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogEntriesRepository.swift; sourceTree = "<group>"; };
+		17A48AEF2601B15100AB34CA /* RemoteBlogEntryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteBlogEntryBuilder.swift; sourceTree = "<group>"; };
 		17A48AF82601C4A300AB34CA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		17BF59D02601DAD100578BB0 /* DispatchQueue+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Extension.swift"; sourceTree = "<group>"; };
+		17BF59E32601E31600578BB0 /* RemoteDataLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataLogger.swift; sourceTree = "<group>"; };
+		17D596182601D1DB00278F43 /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
+		17D596232601D59C00278F43 /* BlogEntriesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogEntriesRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +124,7 @@
 				17A48A982601A16900AB34CA /* Assets.xcassets */,
 				17A48A9D2601A16900AB34CA /* Info.plist */,
 				17A48A9A2601A16900AB34CA /* Preview Content */,
+				17BF59CE2601DAA100578BB0 /* Supporting Files */,
 			);
 			path = Board;
 			sourceTree = "<group>";
@@ -157,9 +168,45 @@
 		17A48ADF2601A66400AB34CA /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				17A48AF72601C04D00AB34CA /* Remote */,
+				17A48AEE2601B13700AB34CA /* Builders */,
 				17A48AE02601A72C00AB34CA /* BlogEntriesRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		17A48AEE2601B13700AB34CA /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				17A48AEF2601B15100AB34CA /* RemoteBlogEntryBuilder.swift */,
+			);
+			path = Builders;
+			sourceTree = "<group>";
+		};
+		17A48AF72601C04D00AB34CA /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+				17D596182601D1DB00278F43 /* RemoteDataSource.swift */,
+				17D596232601D59C00278F43 /* BlogEntriesRouter.swift */,
+				17BF59E32601E31600578BB0 /* RemoteDataLogger.swift */,
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		17BF59CE2601DAA100578BB0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				17BF59CF2601DAB300578BB0 /* Extensions */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		17BF59CF2601DAB300578BB0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				17BF59D02601DAD100578BB0 /* DispatchQueue+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,8 +346,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17D596192601D1DB00278F43 /* RemoteDataSource.swift in Sources */,
+				17BF59D12601DAD100578BB0 /* DispatchQueue+Extension.swift in Sources */,
+				17A48AF02601B15100AB34CA /* RemoteBlogEntryBuilder.swift in Sources */,
+				17BF59E42601E31600578BB0 /* RemoteDataLogger.swift in Sources */,
 				17A48ACF2601A3B500AB34CA /* BlogEntry.swift in Sources */,
 				17A48AC72601A39100AB34CA /* Post.swift in Sources */,
+				17D596242601D59C00278F43 /* BlogEntriesRouter.swift in Sources */,
 				17A48AE12601A72C00AB34CA /* BlogEntriesRepository.swift in Sources */,
 				17A48A972601A16600AB34CA /* ContentView.swift in Sources */,
 				17A48A952601A16600AB34CA /* BoardApp.swift in Sources */,

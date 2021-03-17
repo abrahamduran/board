@@ -10,5 +10,5 @@ import Foundation
 struct Post {
     let id: Int
     let date: Date
-    let imagesUrl: [URL]
+    let photosUrls: [URL]
 }
