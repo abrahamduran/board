@@ -15,6 +15,7 @@
 		17A48AB22601A16900AB34CA /* BoardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A48AB12601A16900AB34CA /* BoardUITests.swift */; };
 		17A48AC72601A39100AB34CA /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A48AC62601A39100AB34CA /* Post.swift */; };
 		17A48ACF2601A3B500AB34CA /* BlogEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A48ACE2601A3B400AB34CA /* BlogEntry.swift */; };
+		17A48AE12601A72C00AB34CA /* BlogEntriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A48AE02601A72C00AB34CA /* BlogEntriesRepository.swift */; };
 		17A48AF92601C4A300AB34CA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A48AF82601C4A300AB34CA /* User.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		17A48AB32601A16900AB34CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17A48AC62601A39100AB34CA /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		17A48ACE2601A3B400AB34CA /* BlogEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogEntry.swift; sourceTree = "<group>"; };
+		17A48AE02601A72C00AB34CA /* BlogEntriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogEntriesRepository.swift; sourceTree = "<group>"; };
 		17A48AF82601C4A300AB34CA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				17A48AC32601A24200AB34CA /* Model */,
+				17A48ADF2601A66400AB34CA /* Repositories */,
 				17A48A942601A16600AB34CA /* BoardApp.swift */,
 				17A48A962601A16600AB34CA /* ContentView.swift */,
 				17A48A982601A16900AB34CA /* Assets.xcassets */,
@@ -145,6 +148,14 @@
 				17A48AF82601C4A300AB34CA /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		17A48ADF2601A66400AB34CA /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				17A48AE02601A72C00AB34CA /* BlogEntriesRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +289,7 @@
 			files = (
 				17A48ACF2601A3B500AB34CA /* BlogEntry.swift in Sources */,
 				17A48AC72601A39100AB34CA /* Post.swift in Sources */,
+				17A48AE12601A72C00AB34CA /* BlogEntriesRepository.swift in Sources */,
 				17A48A972601A16600AB34CA /* ContentView.swift in Sources */,
 				17A48A952601A16600AB34CA /* BoardApp.swift in Sources */,
 				17A48AF92601C4A300AB34CA /* User.swift in Sources */,
