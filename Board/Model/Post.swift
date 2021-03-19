@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Post {
+struct Post: Identifiable {
     let id: Int
     let date: Date
     let photosUrls: [URL]

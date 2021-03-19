@@ -34,14 +34,6 @@ struct PostRow: View {
 
 struct PostRow_Previews: PreviewProvider {
     static var previews: some View {
-        let urls = [
-            "https://source.unsplash.com/featured/500x500/?coffee",
-            "https://source.unsplash.com/featured/500x500/?water",
-            "https://source.unsplash.com/featured/500x500/?table",
-            "https://source.unsplash.com/featured/500x500/?person",
-            "https://source.unsplash.com/featured/500x500/?forest"
-        ].compactMap(URL.init(string:))
-        let post = Post(id: 1, date: Date(), photosUrls: urls)
-        return PostRow(post: post)
+        return PostRow(post: Post.preview.last!)
     }
 }

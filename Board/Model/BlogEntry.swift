@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct BlogEntry {
+struct BlogEntry: Identifiable {
     let id: UUID
     let user: User
     let posts: [Post]
