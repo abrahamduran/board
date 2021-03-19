@@ -55,7 +55,9 @@ final class HomeViewModel: ObservableObject {
             .map { [unowned self] _ in
                 dependency.localRepository
                     .delete(self.entries)
+                    .replaceError(with: ())
             }
+            .switchToLatest()
             .sink { [weak self] _ in
                 self?.configureEntries(scheduler: scheduler, dependency: dependency)
             }
