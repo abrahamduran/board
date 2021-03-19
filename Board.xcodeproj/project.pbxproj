@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		170E1D26260463F5000F2D19 /* BlogEntriesRepository+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170E1D25260463F5000F2D19 /* BlogEntriesRepository+Combine.swift */; };
+		170E1D2B26047B88000F2D19 /* ImageCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170E1D2A26047B88000F2D19 /* ImageCarouselView.swift */; };
 		17A48A952601A16600AB34CA /* BoardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A48A942601A16600AB34CA /* BoardApp.swift */; };
 		17A48A972601A16600AB34CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A48A962601A16600AB34CA /* ContentView.swift */; };
 		17A48A992601A16900AB34CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17A48A982601A16900AB34CA /* Assets.xcassets */; };
@@ -23,6 +25,7 @@
 		17BF59FF2601EAB700578BB0 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BF59FE2601EAB700578BB0 /* LocalDataSource.swift */; };
 		17BF5A082601EC2D00578BB0 /* CouchbaseLiteSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 17BF5A072601EC2D00578BB0 /* CouchbaseLiteSwift */; };
 		17BF5A242601FB2400578BB0 /* LocalBlogEntryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BF5A232601FB2400578BB0 /* LocalBlogEntryBuilder.swift */; };
+		17BF5A302602C64A00578BB0 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BF5A2F2602C64A00578BB0 /* HomeViewModel.swift */; };
 		17D5960E2601CEF800278F43 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 17D5960D2601CEF800278F43 /* Alamofire */; };
 		17D596142601CF6F00278F43 /* AlamofireNetworkActivityIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 17D596132601CF6F00278F43 /* AlamofireNetworkActivityIndicator */; };
 		17D596192601D1DB00278F43 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D596182601D1DB00278F43 /* RemoteDataSource.swift */; };
@@ -47,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		170E1D25260463F5000F2D19 /* BlogEntriesRepository+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BlogEntriesRepository+Combine.swift"; sourceTree = "<group>"; };
 		17A48A912601A16600AB34CA /* Board.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Board.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17A48A942601A16600AB34CA /* BoardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardApp.swift; sourceTree = "<group>"; };
 		17A48A962601A16600AB34CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,6 +72,7 @@
 		17BF59E32601E31600578BB0 /* RemoteDataLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataLogger.swift; sourceTree = "<group>"; };
 		17BF59FE2601EAB700578BB0 /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
 		17BF5A232601FB2400578BB0 /* LocalBlogEntryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalBlogEntryBuilder.swift; sourceTree = "<group>"; };
+		17BF5A2F2602C64A00578BB0 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		17D596182601D1DB00278F43 /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
 		17D596232601D59C00278F43 /* BlogEntriesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogEntriesRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				17A48AC32601A24200AB34CA /* Model */,
+				17A48AC22601A23C00AB34CA /* Scenes */,
 				17A48ADF2601A66400AB34CA /* Repositories */,
 				17A48A942601A16600AB34CA /* BoardApp.swift */,
 				17A48A962601A16600AB34CA /* ContentView.swift */,
@@ -161,6 +167,14 @@
 			path = BoardUITests;
 			sourceTree = "<group>";
 		};
+		17A48AC22601A23C00AB34CA /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				17A48AD32601A5D900AB34CA /* Home */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		17A48AC32601A24200AB34CA /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +183,14 @@
 				17A48AF82601C4A300AB34CA /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		17A48AD32601A5D900AB34CA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				17BF5A2F2602C64A00578BB0 /* HomeViewModel.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		17A48ADF2601A66400AB34CA /* Repositories */ = {
@@ -213,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				17BF59D02601DAD100578BB0 /* DispatchQueue+Extension.swift */,
+				170E1D25260463F5000F2D19 /* BlogEntriesRepository+Combine.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -367,12 +390,14 @@
 				17D596192601D1DB00278F43 /* RemoteDataSource.swift in Sources */,
 				17BF59D12601DAD100578BB0 /* DispatchQueue+Extension.swift in Sources */,
 				17A48AF02601B15100AB34CA /* RemoteBlogEntryBuilder.swift in Sources */,
+				170E1D26260463F5000F2D19 /* BlogEntriesRepository+Combine.swift in Sources */,
 				17BF59E42601E31600578BB0 /* RemoteDataLogger.swift in Sources */,
 				17A48ACF2601A3B500AB34CA /* BlogEntry.swift in Sources */,
 				17A48AC72601A39100AB34CA /* Post.swift in Sources */,
 				17BF59FF2601EAB700578BB0 /* LocalDataSource.swift in Sources */,
 				17D596242601D59C00278F43 /* BlogEntriesRouter.swift in Sources */,
 				17A48AE12601A72C00AB34CA /* BlogEntriesRepository.swift in Sources */,
+				17BF5A302602C64A00578BB0 /* HomeViewModel.swift in Sources */,
 				17A48A972601A16600AB34CA /* ContentView.swift in Sources */,
 				17A48A952601A16600AB34CA /* BoardApp.swift in Sources */,
 				17BF5A242601FB2400578BB0 /* LocalBlogEntryBuilder.swift in Sources */,
