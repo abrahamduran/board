@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		170E1D26260463F5000F2D19 /* BlogEntriesRepository+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170E1D25260463F5000F2D19 /* BlogEntriesRepository+Combine.swift */; };
 		170E1D2B26047B88000F2D19 /* ImageCarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 170E1D2A26047B88000F2D19 /* ImageCarouselView.swift */; };
+		170E1D3A26047DD6000F2D19 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 170E1D3926047DD6000F2D19 /* SDWebImageSwiftUI */; };
 		17A48A952601A16600AB34CA /* BoardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A48A942601A16600AB34CA /* BoardApp.swift */; };
 		17A48A972601A16600AB34CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A48A962601A16600AB34CA /* ContentView.swift */; };
 		17A48A992601A16900AB34CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17A48A982601A16900AB34CA /* Assets.xcassets */; };
@@ -82,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				170E1D3A26047DD6000F2D19 /* SDWebImageSwiftUI in Frameworks */,
 				17BF5A082601EC2D00578BB0 /* CouchbaseLiteSwift in Frameworks */,
 				17D5960E2601CEF800278F43 /* Alamofire in Frameworks */,
 				17D596142601CF6F00278F43 /* AlamofireNetworkActivityIndicator in Frameworks */,
@@ -268,6 +270,7 @@
 				17D5960D2601CEF800278F43 /* Alamofire */,
 				17D596132601CF6F00278F43 /* AlamofireNetworkActivityIndicator */,
 				17BF5A072601EC2D00578BB0 /* CouchbaseLiteSwift */,
+				170E1D3926047DD6000F2D19 /* SDWebImageSwiftUI */,
 			);
 			productName = Board;
 			productReference = 17A48A912601A16600AB34CA /* Board.app */;
@@ -344,6 +347,7 @@
 				17D5960C2601CEF800278F43 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				17D596122601CF6F00278F43 /* XCRemoteSwiftPackageReference "AlamofireNetworkActivityIndicator" */,
 				17BF5A062601EC2C00578BB0 /* XCRemoteSwiftPackageReference "couchbase-lite-ios" */,
+				170E1D3826047DD6000F2D19 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 17A48A922601A16600AB34CA /* Products */;
 			projectDirPath = "";
@@ -717,6 +721,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		170E1D3826047DD6000F2D19 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.2;
+			};
+		};
 		17BF5A062601EC2C00578BB0 /* XCRemoteSwiftPackageReference "couchbase-lite-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/couchbase/couchbase-lite-ios.git";
@@ -744,6 +756,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		170E1D3926047DD6000F2D19 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 170E1D3826047DD6000F2D19 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
 		17BF5A072601EC2D00578BB0 /* CouchbaseLiteSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 17BF5A062601EC2C00578BB0 /* XCRemoteSwiftPackageReference "couchbase-lite-ios" */;
