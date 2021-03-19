@@ -11,7 +11,7 @@ struct PostsList: View {
     let posts: [Post]
 
     var body: some View {
-        ScrollView {
+        VStack {
             ForEach(posts) {
                 PostRow(post: $0)
             }

@@ -19,7 +19,7 @@ struct HomeView: View {
 
     @ViewBuilder var content: some View {
         if viewModel.isLoading {
-            Text("Create Loading View")
+            HomeLoadingView()
         } else {
             LazyVStack(spacing: 24) {
                 ForEach(viewModel.entries) { entry in
