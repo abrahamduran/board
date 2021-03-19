@@ -22,14 +22,28 @@ struct DoubleImageView: View {
     let first: URL
     let second: URL
 
+    var onImageTappedAction: ((URL) -> Void)?
+
     var body: some View {
         HStack {
             WebImage(url: first)
                 .resizable()
+                .onTapGesture {
+                    onImageTappedAction?(first)
+                }
             WebImage(url: second)
                 .resizable()
+                .onTapGesture {
+                    onImageTappedAction?(second)
+                }
         }
         .scaledToFit()
+    }
+
+    func onImageTapped(perform action: @escaping (URL) -> Void ) -> Self {
+        var copy = self
+        copy.onImageTappedAction = action
+        return copy
     }
 }
 
@@ -38,20 +52,36 @@ struct TripleImageView: View {
     let second: URL
     let third: URL
 
+    var onImageTappedAction: ((URL) -> Void)?
+
     var body: some View {
         VStack {
             WebImage(url: first)
                 .resizable()
                 .scaledToFit()
-//                .aspectRatio(1, contentMode: .fill)
+                .onTapGesture {
+                    onImageTappedAction?(first)
+                }
             HStack {
                 WebImage(url: second)
                     .resizable()
+                    .onTapGesture {
+                        onImageTappedAction?(second)
+                    }
                 WebImage(url: third)
                     .resizable()
+                    .onTapGesture {
+                        onImageTappedAction?(third)
+                    }
             }
             .scaledToFit()
         }
+    }
+
+    func onImageTapped(perform action: @escaping (URL) -> Void ) -> Self {
+        var copy = self
+        copy.onImageTappedAction = action
+        return copy
     }
 }
 
@@ -65,6 +95,8 @@ struct MultipleImagesView: View {
     let first: URL
     let items: [URL]
 
+    var onImageTappedAction: ((URL) -> Void)?
+
     init(_ items: [URL]) {
         let slice = items.dropFirst()
         self.first = items[0]
@@ -76,9 +108,19 @@ struct MultipleImagesView: View {
             WebImage(url: first)
                 .resizable()
                 .scaledToFill()
+                .onTapGesture {
+                    onImageTappedAction?(first)
+                }
             ImageCarouselView(imagesUrls: items)
+                .onImageTapped { onImageTappedAction?($0) }
                 .frame(height: carouselHeight)
         }
+    }
+
+    func onImageTapped(perform action: @escaping (URL) -> Void ) -> Self {
+        var copy = self
+        copy.onImageTappedAction = action
+        return copy
     }
 }
 

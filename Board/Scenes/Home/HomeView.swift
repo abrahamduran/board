@@ -9,6 +9,8 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var viewModel: HomeViewModel
+    @State private var isModalPresented = false
+    @State private var selectedImageUrl: URL?
 
     var body: some View {
         if viewModel.isLoading {
@@ -17,13 +19,37 @@ struct HomeView: View {
                     .padding()
             }
         } else {
-            RefreshScrollView(isRefreshing: $viewModel.isRefreshing) {
-                LazyVStack(spacing: 24) {
-                    ForEach(viewModel.entries) { entry in
-                        BlogEntrySection(entry: entry)
+            ZStack {
+                RefreshScrollView(isRefreshing: $viewModel.isRefreshing) {
+                    LazyVStack(spacing: 24) {
+                        ForEach(viewModel.entries) { entry in
+                            BlogEntrySection(entry: entry)
+
+                        }
                     }
+                    .padding()
+                    .environment(\.postRowAction, PostRowAction(onImageTapped: { selectedImageUrl in
+                        self.selectedImageUrl = selectedImageUrl
+                        self.isModalPresented = true
+                    }))
                 }
-                .padding()
+                .blur(radius: self.isModalPresented ? 2 : 0)
+                .animation(Animation.easeIn(duration: 1200))
+
+                if isModalPresented {
+                    Color.black
+                        .opacity(0.8)
+                        .animation(.easeIn)
+                        .edgesIgnoringSafeArea(.all)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                }
+
+                FullscreenImageView(
+                    isPresented: $isModalPresented,
+                    url: selectedImageUrl
+                )
+                .offset(y: self.isModalPresented ? 0 : UIScreen.main.bounds.height)
+                .animation(.spring(blendDuration: 1200))
             }
         }
     }

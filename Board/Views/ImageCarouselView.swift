@@ -11,6 +11,12 @@ import SDWebImageSwiftUI
 struct ImageCarouselView: View {
     let imagesUrls: [URL]
 
+    var onImageTappedAction: ((URL) -> Void)?
+
+    init(imagesUrls: [URL]) {
+        self.imagesUrls = imagesUrls
+    }
+
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
@@ -18,9 +24,18 @@ struct ImageCarouselView: View {
                     WebImage(url: url)
                         .resizable()
                         .scaledToFit()
+                        .onTapGesture {
+                            onImageTappedAction?(url)
+                        }
                 }
             }
         }
+    }
+
+    func onImageTapped(perform action: @escaping (URL) -> Void ) -> Self {
+        var copy = self
+        copy.onImageTappedAction = action
+        return copy
     }
 }
 

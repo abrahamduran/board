@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PostRow: View {
+    @Environment(\.postRowAction) private var action: PostRowAction?
     @Environment(\.ordinalDateFormatter) private var formatter: OrdinalDateFormatter
 
     let post: Post
@@ -28,12 +29,24 @@ struct PostRow: View {
         switch post.photosUrls.count {
         case 1:
             SingleImageView(url: post.photosUrls[0])
+                .onTapGesture {
+                    action?.onImageTapped(post.photosUrls[0])
+                }
         case 2:
             DoubleImageView(first: post.photosUrls[0], second: post.photosUrls[1])
+                .onImageTapped {
+                    action?.onImageTapped($0)
+                }
         case 3:
             TripleImageView(first: post.photosUrls[0], second: post.photosUrls[1], third: post.photosUrls[2])
+                .onImageTapped {
+                    action?.onImageTapped($0)
+                }
         default:
             MultipleImagesView(post.photosUrls)
+                .onImageTapped {
+                    action?.onImageTapped($0)
+                }
         }
     }
 }

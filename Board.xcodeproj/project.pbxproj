@@ -36,6 +36,8 @@
 		17A48AE12601A72C00AB34CA /* BlogEntriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A48AE02601A72C00AB34CA /* BlogEntriesRepository.swift */; };
 		17A48AF02601B15100AB34CA /* RemoteBlogEntryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A48AEF2601B15100AB34CA /* RemoteBlogEntryBuilder.swift */; };
 		17A48AF92601C4A300AB34CA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A48AF82601C4A300AB34CA /* User.swift */; };
+		17BA17CC2604D2EF003A4766 /* FullscreenImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BA17CB2604D2EF003A4766 /* FullscreenImageView.swift */; };
+		17BA17D12604EC83003A4766 /* PostRowAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BA17D02604EC83003A4766 /* PostRowAction.swift */; };
 		17BF59D12601DAD100578BB0 /* DispatchQueue+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BF59D02601DAD100578BB0 /* DispatchQueue+Extension.swift */; };
 		17BF59E42601E31600578BB0 /* RemoteDataLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BF59E32601E31600578BB0 /* RemoteDataLogger.swift */; };
 		17BF59FF2601EAB700578BB0 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BF59FE2601EAB700578BB0 /* LocalDataSource.swift */; };
@@ -99,6 +101,8 @@
 		17A48AE02601A72C00AB34CA /* BlogEntriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogEntriesRepository.swift; sourceTree = "<group>"; };
 		17A48AEF2601B15100AB34CA /* RemoteBlogEntryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteBlogEntryBuilder.swift; sourceTree = "<group>"; };
 		17A48AF82601C4A300AB34CA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		17BA17CB2604D2EF003A4766 /* FullscreenImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenImageView.swift; sourceTree = "<group>"; };
+		17BA17D02604EC83003A4766 /* PostRowAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRowAction.swift; sourceTree = "<group>"; };
 		17BF59D02601DAD100578BB0 /* DispatchQueue+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Extension.swift"; sourceTree = "<group>"; };
 		17BF59E32601E31600578BB0 /* RemoteDataLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataLogger.swift; sourceTree = "<group>"; };
 		17BF59FE2601EAB700578BB0 /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
@@ -143,6 +147,7 @@
 			children = (
 				175E081B260496650029146F /* PostList.swift */,
 				170E1D5D260491BD000F2D19 /* PostRow.swift */,
+				17BA17D02604EC83003A4766 /* PostRowAction.swift */,
 			);
 			path = Posts;
 			sourceTree = "<group>";
@@ -264,6 +269,7 @@
 				170E1D3E26048847000F2D19 /* MultipleImagesViews.swift */,
 				175E08642604B75D0029146F /* RefreshScrollView.swift */,
 				170E1D4326048C59000F2D19 /* UserBadgeView.swift */,
+				17BA17CB2604D2EF003A4766 /* FullscreenImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -487,6 +493,7 @@
 				175E086D2604CC6F0029146F /* OrdinalDateFormatter.swift in Sources */,
 				175E0832260499FF0029146F /* PostPreview.swift in Sources */,
 				170E1D26260463F5000F2D19 /* BlogEntriesRepository+Combine.swift in Sources */,
+				17BA17D12604EC83003A4766 /* PostRowAction.swift in Sources */,
 				175E0825260497D30029146F /* HomeView.swift in Sources */,
 				17BF59E42601E31600578BB0 /* RemoteDataLogger.swift in Sources */,
 				17A48ACF2601A3B500AB34CA /* BlogEntry.swift in Sources */,
@@ -496,6 +503,7 @@
 				175E08722604CEC30029146F /* OrdinalDateFormatter+EnvironmentKey.swift in Sources */,
 				175E082C260499320029146F /* BlogEntriesRepositoryPreview.swift in Sources */,
 				17A48AE12601A72C00AB34CA /* BlogEntriesRepository.swift in Sources */,
+				17BA17CC2604D2EF003A4766 /* FullscreenImageView.swift in Sources */,
 				175E084226049D8D0029146F /* HomeViewModelPreview.swift in Sources */,
 				17BF5A302602C64A00578BB0 /* HomeViewModel.swift in Sources */,
 				17A48A972601A16600AB34CA /* ContentView.swift in Sources */,
