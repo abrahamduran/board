@@ -36,6 +36,7 @@ final class HomeViewModel: ObservableObject {
 
     private func configureIsLoading<SchedulerType: Scheduler>(scheduler: SchedulerType) {
         $entries
+            .dropFirst()
             .map { _ in false }
             .receive(on: scheduler)
             .assign(to: \.isLoading, on: self)
@@ -84,8 +85,7 @@ final class HomeViewModel: ObservableObject {
             .share(replay: 1)
 
         Publishers.Merge(localEntries, remoteEntries)
-            .print("entries")
-            .filter { !$0.isEmpty }
+            .delay(for: .seconds(5), scheduler: scheduler)
             .receive(on: scheduler)
             .assign(to: \.entries, on: self)
             .store(in: &cancellables)

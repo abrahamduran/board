@@ -11,10 +11,6 @@ struct HomeView: View {
     @EnvironmentObject var viewModel: HomeViewModel
 
     var body: some View {
-        content
-    }
-
-    @ViewBuilder var content: some View {
         if viewModel.isLoading {
             ScrollView {
                 HomeLoadingView()
