@@ -25,7 +25,6 @@
 		175E086D2604CC6F0029146F /* OrdinalDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175E086C2604CC6F0029146F /* OrdinalDateFormatter.swift */; };
 		175E08722604CEC30029146F /* OrdinalDateFormatter+EnvironmentKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175E08712604CEC30029146F /* OrdinalDateFormatter+EnvironmentKey.swift */; };
 		17A48A952601A16600AB34CA /* BoardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A48A942601A16600AB34CA /* BoardApp.swift */; };
-		17A48A972601A16600AB34CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A48A962601A16600AB34CA /* ContentView.swift */; };
 		17A48A992601A16900AB34CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17A48A982601A16900AB34CA /* Assets.xcassets */; };
 		17A48A9C2601A16900AB34CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17A48A9B2601A16900AB34CA /* Preview Assets.xcassets */; };
 		17A48AA72601A16900AB34CA /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A48AA62601A16900AB34CA /* HomeViewModelTests.swift */; };
@@ -90,7 +89,6 @@
 		175E08712604CEC30029146F /* OrdinalDateFormatter+EnvironmentKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OrdinalDateFormatter+EnvironmentKey.swift"; sourceTree = "<group>"; };
 		17A48A912601A16600AB34CA /* Board.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Board.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17A48A942601A16600AB34CA /* BoardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardApp.swift; sourceTree = "<group>"; };
-		17A48A962601A16600AB34CA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		17A48A982601A16900AB34CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		17A48A9B2601A16900AB34CA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		17A48A9D2601A16900AB34CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -213,7 +211,6 @@
 				17A48ADF2601A66400AB34CA /* Repositories */,
 				17A48AC42601A28300AB34CA /* Views */,
 				17A48A942601A16600AB34CA /* BoardApp.swift */,
-				17A48A962601A16600AB34CA /* ContentView.swift */,
 				17A48A982601A16900AB34CA /* Assets.xcassets */,
 				17A48A9D2601A16900AB34CA /* Info.plist */,
 				17A48A9A2601A16900AB34CA /* Preview Content */,
@@ -527,7 +524,6 @@
 				17BA17CC2604D2EF003A4766 /* FullscreenImageView.swift in Sources */,
 				175E084226049D8D0029146F /* HomeViewModelPreview.swift in Sources */,
 				17BF5A302602C64A00578BB0 /* HomeViewModel.swift in Sources */,
-				17A48A972601A16600AB34CA /* ContentView.swift in Sources */,
 				175E081C260496650029146F /* PostList.swift in Sources */,
 				170E1D3F26048847000F2D19 /* MultipleImagesViews.swift in Sources */,
 				17A48A952601A16600AB34CA /* BoardApp.swift in Sources */,

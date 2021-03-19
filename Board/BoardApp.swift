@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import AlamofireNetworkActivityIndicator
 
 @main
 struct BoardApp: App {
+    init() {
+        NetworkActivityIndicatorManager.shared.isEnabled = true
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
+                .environmentObject(HomeViewModel(scheduler: DispatchQueue.main))
         }
     }
 }
