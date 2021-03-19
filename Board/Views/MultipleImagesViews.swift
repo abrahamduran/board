@@ -75,7 +75,7 @@ struct MultipleImagesView: View {
         VStack {
             WebImage(url: first)
                 .resizable()
-                .scaledToFit()
+                .scaledToFill()
             ImageCarouselView(imagesUrls: items)
                 .frame(height: carouselHeight)
         }
