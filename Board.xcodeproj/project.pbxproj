@@ -20,7 +20,9 @@
 		17A48AF92601C4A300AB34CA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A48AF82601C4A300AB34CA /* User.swift */; };
 		17BF59D12601DAD100578BB0 /* DispatchQueue+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BF59D02601DAD100578BB0 /* DispatchQueue+Extension.swift */; };
 		17BF59E42601E31600578BB0 /* RemoteDataLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BF59E32601E31600578BB0 /* RemoteDataLogger.swift */; };
+		17BF59FF2601EAB700578BB0 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BF59FE2601EAB700578BB0 /* LocalDataSource.swift */; };
 		17BF5A082601EC2D00578BB0 /* CouchbaseLiteSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 17BF5A072601EC2D00578BB0 /* CouchbaseLiteSwift */; };
+		17BF5A242601FB2400578BB0 /* LocalBlogEntryBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BF5A232601FB2400578BB0 /* LocalBlogEntryBuilder.swift */; };
 		17D5960E2601CEF800278F43 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 17D5960D2601CEF800278F43 /* Alamofire */; };
 		17D596142601CF6F00278F43 /* AlamofireNetworkActivityIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 17D596132601CF6F00278F43 /* AlamofireNetworkActivityIndicator */; };
 		17D596192601D1DB00278F43 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D596182601D1DB00278F43 /* RemoteDataSource.swift */; };
@@ -64,6 +66,8 @@
 		17A48AF82601C4A300AB34CA /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		17BF59D02601DAD100578BB0 /* DispatchQueue+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Extension.swift"; sourceTree = "<group>"; };
 		17BF59E32601E31600578BB0 /* RemoteDataLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataLogger.swift; sourceTree = "<group>"; };
+		17BF59FE2601EAB700578BB0 /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
+		17BF5A232601FB2400578BB0 /* LocalBlogEntryBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalBlogEntryBuilder.swift; sourceTree = "<group>"; };
 		17D596182601D1DB00278F43 /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
 		17D596232601D59C00278F43 /* BlogEntriesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogEntriesRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,6 +174,7 @@
 		17A48ADF2601A66400AB34CA /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				17BF59FD2601EA9B00578BB0 /* Local */,
 				17A48AF72601C04D00AB34CA /* Remote */,
 				17A48AEE2601B13700AB34CA /* Builders */,
 				17A48AE02601A72C00AB34CA /* BlogEntriesRepository.swift */,
@@ -181,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				17A48AEF2601B15100AB34CA /* RemoteBlogEntryBuilder.swift */,
+				17BF5A232601FB2400578BB0 /* LocalBlogEntryBuilder.swift */,
 			);
 			path = Builders;
 			sourceTree = "<group>";
@@ -209,6 +215,14 @@
 				17BF59D02601DAD100578BB0 /* DispatchQueue+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		17BF59FD2601EA9B00578BB0 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				17BF59FE2601EAB700578BB0 /* LocalDataSource.swift */,
+			);
+			path = Local;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,10 +370,12 @@
 				17BF59E42601E31600578BB0 /* RemoteDataLogger.swift in Sources */,
 				17A48ACF2601A3B500AB34CA /* BlogEntry.swift in Sources */,
 				17A48AC72601A39100AB34CA /* Post.swift in Sources */,
+				17BF59FF2601EAB700578BB0 /* LocalDataSource.swift in Sources */,
 				17D596242601D59C00278F43 /* BlogEntriesRouter.swift in Sources */,
 				17A48AE12601A72C00AB34CA /* BlogEntriesRepository.swift in Sources */,
 				17A48A972601A16600AB34CA /* ContentView.swift in Sources */,
 				17A48A952601A16600AB34CA /* BoardApp.swift in Sources */,
+				17BF5A242601FB2400578BB0 /* LocalBlogEntryBuilder.swift in Sources */,
 				17A48AF92601C4A300AB34CA /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
