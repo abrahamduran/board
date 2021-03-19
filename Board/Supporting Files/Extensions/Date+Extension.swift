@@ -15,6 +15,12 @@ extension Date {
             formatter.setLocalizedDateFormatFromTemplate("MMMd")
             return formatter
         }()
+
+        static let server: DateFormatter = {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "EEE MMM dd yyyy HH:mm:ss Z"
+            return formatter
+        }()
     }
 
     var shortDateString: String {

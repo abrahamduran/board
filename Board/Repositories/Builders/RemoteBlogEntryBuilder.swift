@@ -10,6 +10,12 @@ import Foundation
 final class RemoteBlogEntryBuilder {
     private let decoder: JSONDecoder = {
         let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .custom({ decoder -> Date in
+            let container = try decoder.singleValueContainer()
+            let string = try container.decode(String.self)
+                .replacingOccurrences(of: "GMT", with: "")
+            return Date.Formatters.server.date(from: string) ?? Date()
+        })
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         return decoder
     }()
@@ -38,7 +44,7 @@ private extension RemoteBlogEntryBuilder.Response {
 
     struct Post: Decodable {
         let id: Int
-        let date: TimeInterval
+        let date: Date
         let pics: [URL]
     }
 }
@@ -54,7 +60,7 @@ private extension BlogEntry {
 private extension Post {
     init(_ response: RemoteBlogEntryBuilder.Response.Post) {
         id = response.id
-        date = Date(timeIntervalSince1970: response.date)
+        date = response.date
         photosUrls = response.pics
     }
 }
