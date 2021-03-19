@@ -11,20 +11,23 @@ struct HomeView: View {
     @EnvironmentObject var viewModel: HomeViewModel
 
     var body: some View {
-        ScrollView {
-            content
-        }
-        .padding()
+        content
     }
 
     @ViewBuilder var content: some View {
         if viewModel.isLoading {
-            HomeLoadingView()
+            ScrollView {
+                HomeLoadingView()
+                    .padding()
+            }
         } else {
-            LazyVStack(spacing: 24) {
-                ForEach(viewModel.entries) { entry in
-                    BlogEntrySection(entry: entry)
+            RefreshScrollView(isRefreshing: $viewModel.isRefreshing) {
+                LazyVStack(spacing: 24) {
+                    ForEach(viewModel.entries) { entry in
+                        BlogEntrySection(entry: entry)
+                    }
                 }
+                .padding()
             }
         }
     }

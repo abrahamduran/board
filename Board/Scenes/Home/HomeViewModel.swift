@@ -12,16 +12,7 @@ import CombineExt
 final class HomeViewModel: ObservableObject {
     @Published private(set) var entries = [BlogEntry]()
     @Published private(set) var isLoading = true
-    @Published private(set) var isRefreshing = false
-
-    struct Input {
-        fileprivate let refreshSubject = PassthroughSubject<Void, Never>()
-        func refresh() {
-            refreshSubject.send()
-        }
-    }
-
-    let input = Input()
+    @Published var isRefreshing = false
 
     struct Dependency {
         let remoteRepository: BlogEntriesRepository
@@ -52,14 +43,15 @@ final class HomeViewModel: ObservableObject {
     }
 
     private func configureIsRefreshing<SchedulerType: Scheduler>(scheduler: SchedulerType) {
-        Publishers.Merge($entries.map { _ in false }, input.refreshSubject.map { _ in true})
+        $entries.map { _ in false }
             .receive(on: scheduler)
             .assign(to: \.isRefreshing, on: self)
             .store(in: &cancellables)
     }
 
     private func configureRefresh<SchedulerType: Scheduler>(scheduler: SchedulerType, dependency: Dependency) {
-        input.refreshSubject
+        $isRefreshing
+            .filter { $0 }
             .map { [unowned self] _ in
                 dependency.localRepository
                     .delete(self.entries)
@@ -90,6 +82,7 @@ final class HomeViewModel: ObservableObject {
             .share(replay: 1)
 
         Publishers.Merge(localEntries, remoteEntries)
+            .print("entries")
             .filter { !$0.isEmpty }
             .receive(on: scheduler)
             .assign(to: \.entries, on: self)
