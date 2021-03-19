@@ -20,6 +20,7 @@
 		17A48AF92601C4A300AB34CA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A48AF82601C4A300AB34CA /* User.swift */; };
 		17BF59D12601DAD100578BB0 /* DispatchQueue+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BF59D02601DAD100578BB0 /* DispatchQueue+Extension.swift */; };
 		17BF59E42601E31600578BB0 /* RemoteDataLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17BF59E32601E31600578BB0 /* RemoteDataLogger.swift */; };
+		17BF5A082601EC2D00578BB0 /* CouchbaseLiteSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 17BF5A072601EC2D00578BB0 /* CouchbaseLiteSwift */; };
 		17D5960E2601CEF800278F43 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 17D5960D2601CEF800278F43 /* Alamofire */; };
 		17D596142601CF6F00278F43 /* AlamofireNetworkActivityIndicator in Frameworks */ = {isa = PBXBuildFile; productRef = 17D596132601CF6F00278F43 /* AlamofireNetworkActivityIndicator */; };
 		17D596192601D1DB00278F43 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D596182601D1DB00278F43 /* RemoteDataSource.swift */; };
@@ -72,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17BF5A082601EC2D00578BB0 /* CouchbaseLiteSwift in Frameworks */,
 				17D5960E2601CEF800278F43 /* Alamofire in Frameworks */,
 				17D596142601CF6F00278F43 /* AlamofireNetworkActivityIndicator in Frameworks */,
 			);
@@ -228,6 +230,7 @@
 			packageProductDependencies = (
 				17D5960D2601CEF800278F43 /* Alamofire */,
 				17D596132601CF6F00278F43 /* AlamofireNetworkActivityIndicator */,
+				17BF5A072601EC2D00578BB0 /* CouchbaseLiteSwift */,
 			);
 			productName = Board;
 			productReference = 17A48A912601A16600AB34CA /* Board.app */;
@@ -303,6 +306,7 @@
 			packageReferences = (
 				17D5960C2601CEF800278F43 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				17D596122601CF6F00278F43 /* XCRemoteSwiftPackageReference "AlamofireNetworkActivityIndicator" */,
+				17BF5A062601EC2C00578BB0 /* XCRemoteSwiftPackageReference "couchbase-lite-ios" */,
 			);
 			productRefGroup = 17A48A922601A16600AB34CA /* Products */;
 			projectDirPath = "";
@@ -672,6 +676,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		17BF5A062601EC2C00578BB0 /* XCRemoteSwiftPackageReference "couchbase-lite-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/couchbase/couchbase-lite-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.4;
+			};
+		};
 		17D5960C2601CEF800278F43 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -691,6 +703,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		17BF5A072601EC2D00578BB0 /* CouchbaseLiteSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17BF5A062601EC2C00578BB0 /* XCRemoteSwiftPackageReference "couchbase-lite-ios" */;
+			productName = CouchbaseLiteSwift;
+		};
 		17D5960D2601CEF800278F43 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 17D5960C2601CEF800278F43 /* XCRemoteSwiftPackageReference "Alamofire" */;
