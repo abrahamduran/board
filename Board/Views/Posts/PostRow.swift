@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct PostRow: View {
+    @Environment(\.ordinalDateFormatter) private var formatter: OrdinalDateFormatter
+
     let post: Post
+
+    var title: String {
+        formatter.string(from: post.date)
+    }
 
     var body: some View {
         VStack {
-            Text(post.date.shortDateString)
+            Text(title)
                 .font(.body)
             imagesView
         }
