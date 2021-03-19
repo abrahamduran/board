@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 import CombineExt
+import SDWebImage
 
 final class HomeViewModel: ObservableObject {
     @Published private(set) var entries = [BlogEntry]()
@@ -61,6 +62,7 @@ final class HomeViewModel: ObservableObject {
             .switchToLatest()
             .sink { [weak self] _ in
                 self?.configureEntries(scheduler: scheduler, dependency: dependency)
+                SDWebImageManager.defaultImageCache?.clear(with: .all, completion: nil)
             }
             .store(in: &cancellables)
     }
@@ -79,6 +81,7 @@ final class HomeViewModel: ObservableObject {
                     .replaceError(with: [])
             }
             .switchToLatest()
+            .filter { !$0.isEmpty}
             .handleEvents(receiveOutput: { output in
                 dependency.localRepository.save(output, completion: { _ in })
             })
