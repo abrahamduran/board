@@ -19,6 +19,7 @@
 		175E0832260499FF0029146F /* PostPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175E0831260499FF0029146F /* PostPreview.swift */; };
 		175E083A26049B160029146F /* BlogEntryPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175E083926049B160029146F /* BlogEntryPreview.swift */; };
 		175E084226049D8D0029146F /* HomeViewModelPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175E084126049D8D0029146F /* HomeViewModelPreview.swift */; };
+		175E08502604AB5E0029146F /* CombineExt in Frameworks */ = {isa = PBXBuildFile; productRef = 175E084F2604AB5E0029146F /* CombineExt */; };
 		17A48A952601A16600AB34CA /* BoardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A48A942601A16600AB34CA /* BoardApp.swift */; };
 		17A48A972601A16600AB34CA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A48A962601A16600AB34CA /* ContentView.swift */; };
 		17A48A992601A16900AB34CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17A48A982601A16900AB34CA /* Assets.xcassets */; };
@@ -105,6 +106,7 @@
 				170E1D3A26047DD6000F2D19 /* SDWebImageSwiftUI in Frameworks */,
 				17BF5A082601EC2D00578BB0 /* CouchbaseLiteSwift in Frameworks */,
 				17D5960E2601CEF800278F43 /* Alamofire in Frameworks */,
+				175E08502604AB5E0029146F /* CombineExt in Frameworks */,
 				17D596142601CF6F00278F43 /* AlamofireNetworkActivityIndicator in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,6 +342,7 @@
 				17D596132601CF6F00278F43 /* AlamofireNetworkActivityIndicator */,
 				17BF5A072601EC2D00578BB0 /* CouchbaseLiteSwift */,
 				170E1D3926047DD6000F2D19 /* SDWebImageSwiftUI */,
+				175E084F2604AB5E0029146F /* CombineExt */,
 			);
 			productName = Board;
 			productReference = 17A48A912601A16600AB34CA /* Board.app */;
@@ -417,6 +420,7 @@
 				17D596122601CF6F00278F43 /* XCRemoteSwiftPackageReference "AlamofireNetworkActivityIndicator" */,
 				17BF5A062601EC2C00578BB0 /* XCRemoteSwiftPackageReference "couchbase-lite-ios" */,
 				170E1D3826047DD6000F2D19 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				175E084E2604AB5E0029146F /* XCRemoteSwiftPackageReference "CombineExt" */,
 			);
 			productRefGroup = 17A48A922601A16600AB34CA /* Products */;
 			projectDirPath = "";
@@ -808,6 +812,14 @@
 				minimumVersion = 2.0.2;
 			};
 		};
+		175E084E2604AB5E0029146F /* XCRemoteSwiftPackageReference "CombineExt" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CombineCommunity/CombineExt.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.0;
+			};
+		};
 		17BF5A062601EC2C00578BB0 /* XCRemoteSwiftPackageReference "couchbase-lite-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/couchbase/couchbase-lite-ios.git";
@@ -839,6 +851,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 170E1D3826047DD6000F2D19 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
+		};
+		175E084F2604AB5E0029146F /* CombineExt */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 175E084E2604AB5E0029146F /* XCRemoteSwiftPackageReference "CombineExt" */;
+			productName = CombineExt;
 		};
 		17BF5A072601EC2D00578BB0 /* CouchbaseLiteSwift */ = {
 			isa = XCSwiftPackageProductDependency;

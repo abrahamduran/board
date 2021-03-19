@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import CombineExt
 
 final class HomeViewModel: ObservableObject {
     @Published private(set) var entries = [BlogEntry]()
@@ -37,6 +38,9 @@ final class HomeViewModel: ObservableObject {
 
     init<SchedulerType: Scheduler>(dependency: Dependency = Dependency(), scheduler: SchedulerType) {
         configureIsLoading(scheduler: scheduler)
+        configureIsRefreshing(scheduler: scheduler)
+        configureRefresh(scheduler: scheduler, dependency: dependency)
+        configureEntries(scheduler: scheduler, dependency: dependency)
     }
 
     private func configureIsLoading<SchedulerType: Scheduler>(scheduler: SchedulerType) {
@@ -70,7 +74,7 @@ final class HomeViewModel: ObservableObject {
         let localEntries = dependency.localRepository
             .fetch()
             .replaceError(with: [])
-            .share()
+            .share(replay: 1)
 
         let remoteEntries = localEntries
             .filter(\.isEmpty)
@@ -80,15 +84,13 @@ final class HomeViewModel: ObservableObject {
                     .replaceError(with: [])
             }
             .switchToLatest()
-            .share()
+            .handleEvents(receiveOutput: { output in
+                dependency.localRepository.save(output, completion: { _ in })
+            })
+            .share(replay: 1)
 
-        remoteEntries.sink { output in
-            dependency.localRepository.save(output, completion: { _ in })
-        }
-        .store(in: &cancellables)
-
-        localEntries.merge(with: remoteEntries)
-            .filter(\.isEmpty)
+        Publishers.Merge(localEntries, remoteEntries)
+            .filter { !$0.isEmpty }
             .receive(on: scheduler)
             .assign(to: \.entries, on: self)
             .store(in: &cancellables)
