@@ -87,7 +87,7 @@ final class HomeViewModel: ObservableObject {
             })
             .share(replay: 1)
 
-        Publishers.Merge(localEntries, remoteEntries)
+        Publishers.Merge(localEntries.filter { !$0.isEmpty }, remoteEntries)
             .delay(for: .seconds(5), scheduler: scheduler)
             .receive(on: scheduler)
             .assign(to: \.entries, on: self)
